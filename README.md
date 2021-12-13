@@ -1,21 +1,4 @@
-# vuex
+## 介绍文档
 
-> A Vue.js project
+vuex学习代码存储仓库，这里放置了我在学习vuex时使用的代码，它包含了多种形式state、getters、mutations的调用方法以及modules模块使用示例，同时还用更加优雅的方式使用axios和mock.js进行了简单的异步调用数据对vuex仓库进行初始化的实战，如果你对此demo感兴趣，可以搭配本篇博客使用👉[vuex从入门到实战](https://coolchong.cn/2021/12/12/vuex/)
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
