@@ -9,12 +9,26 @@ export default {
     setTimeout(() => {
       context.commit('setCurIdx', idx);
     }, 1000)
+    //用来给suc赋值
+    return true;
   },
   init(context) {
     // 调用它的initData()方法进行初始化
     apis.initData().then(res => {
-      console.log(res)
-      context.commit('setCurIdx', res.data.initData.curIdx)
+      // console.log(res)
+      context.commit('setCurIdx', res.data.initData.curIdx);
     });
+  },
+  hello() {
+    //嵌套在最外面
+    return new Promise((resolve, reject) => {
+      // 1s以后执行打印操作，然后返还success给suc赋值
+      setTimeout(() => {
+        console.log(`hello`);
+        //手动加入执行完成后的resolve函数
+        // 这样后面的then可以捕捉到继续执行函数
+        resolve("success");
+      }, 1000);
+    })
   }
 }

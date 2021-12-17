@@ -38,12 +38,19 @@
 
 <script>
 import { mapMutations } from "vuex";
-import {mapActions} from 'vuex'
+import { mapActions } from "vuex";
 export default {
   name: "Tab",
   //调用actions进行curIndex的初始化
   created() {
     this.$store.dispatch("init");
+    this.$store.dispatch("hello").then((data) => {
+      console.log(data)
+      if (data === `success`) {
+        var suc = true;
+        console.log(suc);
+      }
+    });
   },
   //接收父组件传递进来的curIdx的值
   // props: {
@@ -54,7 +61,7 @@ export default {
     // 使用映射的方法获取setCurIdx方法
     ...mapMutations(["setCurIdx"]),
     // 映射引入actions
-    ...mapActions(['updateCurIdx']),
+    ...mapActions(["updateCurIdx"]),
     // changeTab(i) {
     //   this.$emit("changeTab", i);
     // },
